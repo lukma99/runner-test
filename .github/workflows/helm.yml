@@ -52,4 +52,4 @@ jobs:
           echo BREAK
           kubectl version
           echo BREAK
-          kubectl get deployments
+          kubectl config view
