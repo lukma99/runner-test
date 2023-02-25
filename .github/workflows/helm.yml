@@ -33,6 +33,7 @@ jobs:
         env:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
+          mkdir -p ~/.kube/
           echo $KUBECONFIG > ~/.kube/config
           ls -l
           kubectl version
