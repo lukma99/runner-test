@@ -40,6 +40,7 @@ jobs:
           cd ~/.kube/
           echo BREAK
           ls -a
+          head -3 ~/.kube/config
           echo BREAK
         # ls -l
         # kubectl version
