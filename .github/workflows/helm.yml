@@ -30,6 +30,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
+        env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
+          echo $KUBECONFIG > ~/.kube/config
           ls -l
-          kubectl version --client=true --short
+          kubectl version
+          kubectl get deployments
