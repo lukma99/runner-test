@@ -4,6 +4,10 @@ name: Helm
 
 # Controls when the workflow will run
 on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -15,7 +19,7 @@ jobs:
     runs-on: self-hosted
     
     container:
-      image: bitnami/kubectl:1.24.10
+      image: maven:3.9.0
       # env:
       #   NODE_ENV: development
 
@@ -27,4 +31,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          kubectl version
+          mvn -v
