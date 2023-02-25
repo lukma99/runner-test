@@ -34,7 +34,13 @@ jobs:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
           mkdir -p ~/.kube/
+          echo BREAK
           echo $KUBECONFIG > ~/.kube/config
-          ls -l
-          kubectl version
-          kubectl get deployments
+          echo BREAK
+          cd ~/.kube/
+          echo BREAK
+          ll
+          echo BREAK
+        # ls -l
+        # kubectl version
+        # kubectl get deployments
