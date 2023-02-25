@@ -31,11 +31,11 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         env:
-          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+          KUBECONFIG_BASE_64: ${{ secrets.KUBECONFIG_BASE_64 }}
         run: |
           mkdir -p ~/.kube/
           echo BREAK
-          echo $KUBECONFIG > ~/.kube/config
+          echo $KUBECONFIG_BASE_64 | base64 -d  > ~/.kube/config
           echo BREAK
           cd ~/.kube/
           echo BREAK
