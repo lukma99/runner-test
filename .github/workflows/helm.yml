@@ -41,14 +41,14 @@ jobs:
         env:
           KUBECONFIG_BASE_64: ${{ secrets.KUBECONFIG_BASE_64 }}  
         run: |
-          mkdir -p ~/.kube/
+          # mkdir -p ~/.kube/
           echo BREAK
-          echo $KUBECONFIG_BASE_64 | base64 -di  > ~/.kube/config
+          # echo $KUBECONFIG_BASE_64 | base64 -di  > ~/.kube/config
           echo BREAK
-          cd ~/.kube/
+          # cd ~/.kube/
           echo BREAK
           ls -a
-          head -3 ~/.kube/config
+          # head -3 ~/.kube/config
           echo BREAK
           kubectl version
           echo BREAK
