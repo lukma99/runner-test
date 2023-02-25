@@ -19,7 +19,7 @@ jobs:
     runs-on: self-hosted
     
     container:
-      image: bitnami/kubectl:1.25.6
+      image: alpine/k8s:1.25.6
       # env:
       #   NODE_ENV: development
 
@@ -32,3 +32,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           ls -l
+          kubectl version --client=true --short
