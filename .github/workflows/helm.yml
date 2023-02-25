@@ -42,6 +42,6 @@ jobs:
           ls -a
           head -3 ~/.kube/config
           echo BREAK
-        # ls -l
-        # kubectl version
-        # kubectl get deployments
+          kubectl version
+          echo BREAK
+          kubectl get deployments
