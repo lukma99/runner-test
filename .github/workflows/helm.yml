@@ -18,6 +18,7 @@ jobs:
       image: bitnami/kubectl:1.24.10
       env:
         NODE_ENV: development
+      options: --user 1001  # ← THIS IS THE IMPORTANT LINE!
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
